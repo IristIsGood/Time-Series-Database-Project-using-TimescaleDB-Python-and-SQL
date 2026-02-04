@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <edge id="edge1" from="node1" to="node2" priority="1">
+        <lane id="edge1_0" index="0" speed="13.89" length="1000.00" shape="0.00,0.00 1000.00,0.00"/>
+    </edge>
+    
+    <junction id="node1" type="priority" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,1.60 0.00,-1.60"/>
+    <junction id="node2" type="priority" x="1000.00" y="0.00" incLanes="edge1_0" intLanes="" shape="1000.00,-1.60 1000.00,1.60"/>
+</net>

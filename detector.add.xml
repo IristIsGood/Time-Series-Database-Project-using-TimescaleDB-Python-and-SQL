@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+    <e1Detector id="detector_1" lane="edge1_0" pos="100" freq="1" file="detector_output.xml"/>
+    <e1Detector id="detector_2" lane="edge1_0" pos="500" freq="1" file="detector_output.xml"/>
+    <e1Detector id="detector_3" lane="edge1_0" pos="900" freq="1" file="detector_output.xml"/>
+</additional>

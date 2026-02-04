@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <input>
+        <net-file value="simple.net.xml"/>
+        <route-files value="simple.rou.xml"/>
+        <additional-files value="detector.add.xml"/>
+    </input>
+    
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+    </time>
+    
+    <processing>
+        <step-length value="1"/>
+    </processing>
+</configuration>
