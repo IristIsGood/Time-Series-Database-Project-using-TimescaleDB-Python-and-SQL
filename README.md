@@ -127,34 +127,31 @@ Clear separation of responsibilities: **Python** for ETL and orchestration, **SQ
 | `simulation.sumocfg`, `simple.net.xml`, `simple.rou.xml` | SUMO simulation configuration and network/routes. |
 
 ---
-🛠️ Tech Stack & SQL Synergy
-Orchestration & ETL: Python (psycopg2) for batching (executemany) and timestamp normalization.
 
-Database Engine: TimescaleDB (PostgreSQL Extension).
+## 🛠️ Tech Stack & SQL Synergy
+* **Orchestration & ETL:** Python (psycopg2) for batching (`executemany`) and timestamp normalization.
+* **Database Engine:** TimescaleDB (PostgreSQL Extension).
+* **Analytical SQL:** * `time_bucket('5 minutes', time)` for downsampling.
+    * `LAG(time) OVER (ORDER BY time)` for gap analysis.
+    * `add_compression_policy()` for automated storage optimization.
 
-Analytical SQL: * time_bucket('5 minutes', time) for downsampling.
+## 🚀 Getting Started
 
-LAG(time) OVER (ORDER BY time) for gap analysis.
+### 1. Prerequisites
+* PostgreSQL with **TimescaleDB** installed (e.g., via Docker or Timescale Forge).
+* Python 3.10+ and `psycopg2`.
 
-add_compression_policy() for automated storage optimization.
+### 2. Execution
+1. **Initialize DB:** `python setup_database_simple.py` (Creates Hypertable & Indices).
+2. **Load Data:** `python ingest_data_simple.py` (Performs batch ETL).
+3. **Run Analytics:** `python query_data_simple.py` (Calculates aggregates & identifies gaps).
 
-🚀 Getting Started
-1. Prerequisites
-PostgreSQL with TimescaleDB installed (e.g., via Docker or Timescale Forge).
+---
 
-Python 3.10+ and psycopg2.
-
-2. Execution
-Initialize DB: python setup_database_simple.py (Creates Hypertable & Indices).
-
-Load Data: python ingest_data_simple.py (Performs batch ETL).
-
-Run Analytics: python query_data_simple.py (Calculates aggregates & identifies gaps).
-
-🛡️ License
+## 🛡️ License
 MIT
 
-👤 Developer
-Irist – Specializing in High-Throughput Data Systems & Scalable Architecture.
+## 👤 Developer
+**Irist** – Specializing in High-Throughput Data Systems & Scalable Architecture.
 
 
