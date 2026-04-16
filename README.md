@@ -127,15 +127,34 @@ Clear separation of responsibilities: **Python** for ETL and orchestration, **SQ
 | `simulation.sumocfg`, `simple.net.xml`, `simple.rou.xml` | SUMO simulation configuration and network/routes. |
 
 ---
+🛠️ Tech Stack & SQL Synergy
+Orchestration & ETL: Python (psycopg2) for batching (executemany) and timestamp normalization.
 
-## Quick Start
+Database Engine: TimescaleDB (PostgreSQL Extension).
 
-1. **Prerequisites**: PostgreSQL with **TimescaleDB** (e.g. port 5433). Python 3 with **psycopg2**.
-2. **Configure**: Set DB host, port, user, and password in the scripts (or use env vars for production).
-3. **Setup**: `python setup_database_simple.py`
-4. **Ingest**: `python ingest_data_simple.py`
-5. **Query**: `python query_data_simple.py`
+Analytical SQL: * time_bucket('5 minutes', time) for downsampling.
 
----
+LAG(time) OVER (ORDER BY time) for gap analysis.
 
-*This project highlights expertise in **high-velocity time-series data**, **Python**-driven ETL, and **SQL**-based analytics on a **Time-Series Database**, with a focus on **performance**, **compression**, and **time-centric** design.*
+add_compression_policy() for automated storage optimization.
+
+🚀 Getting Started
+1. Prerequisites
+PostgreSQL with TimescaleDB installed (e.g., via Docker or Timescale Forge).
+
+Python 3.10+ and psycopg2.
+
+2. Execution
+Initialize DB: python setup_database_simple.py (Creates Hypertable & Indices).
+
+Load Data: python ingest_data_simple.py (Performs batch ETL).
+
+Run Analytics: python query_data_simple.py (Calculates aggregates & identifies gaps).
+
+🛡️ License
+MIT
+
+👤 Developer
+Irist – Specializing in High-Throughput Data Systems & Scalable Architecture.
+
+
